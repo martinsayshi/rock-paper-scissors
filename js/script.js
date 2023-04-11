@@ -34,22 +34,21 @@ const score = {
     computer: 0
 }
 
-let round = 1;
-function game() {
-    while (round <= 5) {
-        // Prompt user for an input
-        const playerSelection = prompt("What is your pick?");
-        const computerSelection = getComputerChoice();
-        // Play game
-        console.log(playRound(playerSelection, computerSelection));
-        console.log(`Player: ${score.player} Computer: ${score.computer}`);
-        round++;
-    // add score
-    // loop through it 5 times
-    // show the final score
-    }
+let round = 0;
+function game(playerChoice) {
+    const computerSelection = getComputerChoice();
+    
+    // Play game
+    console.log(playRound(playerChoice, computerSelection));
+    console.log(`Player: ${score.player} Computer: ${score.computer}`);
+    round++;
+    console.log(round);
 }
 
-game();
-let final = score.player > score.computer ? "You won the game!" : "You lost the game :(";
-console.log(final)
+
+const buttons = document.getElementsByTagName('button');
+
+for (let button of buttons) {
+    button.addEventListener('click', () => game(button.id));
+}
+
