@@ -2,7 +2,8 @@ const moves = ["Rock", "Paper", "Scissors"];
 const signs = {
     "Rock": "✊",
     "Paper": "✋",
-    "Scissors": "✌"
+    "Scissors": "✌",
+    "start": "❔"
 }
 
 const playerScore = document.querySelector(".player");
@@ -18,7 +19,8 @@ function getRandomInteger(min, max) {
 
 function getComputerChoice() {
     let randomNumber = getRandomInteger(0, 3);
-    return moves[randomNumber];
+    // return moves[randomNumber];
+    return Object.keys(signs)[randomNumber];
 }
 
 function filterPlayerSelection(playerSelection) {
@@ -53,12 +55,18 @@ function checkWinner(score) {
 function resetGame() {
     playerScore.textContent = `Player: 0`;
     computerScore.textContent=  `Computer: 0`;
+    playerWeapon.textContent = signs.start;
+    computerWeapon.textContent = signs.start;
+    score.player = 0;
+    score.computer = 0;
     // results.textContent = "Choose your weapon";
 }
 
 function updateText(playerChoice, computerChoice, winner) {
+    const player = filterPlayerSelection(playerChoice);
+    playerWeapon.textContent = signs[player];
+    computerWeapon.textContent = signs[computerChoice];
     results.textContent = winner;
-    playerWeapon.textContent = 
     playerScore.textContent = `Player: ${score.player}`;
     computerScore.textContent=  `Computer: ${score.computer}`;
 }
@@ -68,7 +76,7 @@ function game(playerChoice) {
     
     // Play game
     const winner = playRound(playerChoice, computerSelection);
-    updateText(winner);
+    updateText(playerChoice, computerSelection, winner);
     checkWinner(score);
 }
 
