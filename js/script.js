@@ -93,3 +93,5 @@ for (let button of buttons) {
     button.addEventListener('click', () => game(button.id));
 }
 
+
+document.getElementById('year').textContent = new Date().getFullYear();

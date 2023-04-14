@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
     <script src="/js/script.js" defer></script>
 </head>
 <body>
@@ -13,7 +19,7 @@
     </header>
     <section class="game">
         <div>
-            <h2 class="result">Choose your weapon ✊</h2>
+            <h2 class="result">Choose your weapon</h2>
             <p>First to score 5 points wins the game!</p>
             <div class="board">
                 <div class="game-player">
@@ -24,17 +30,16 @@
                     <div class="weapon" id="computerWeapon">❔</div>
                     <p class="score computer"><strong>Computer: </strong>0</p>
                 </div>
-                
             </div>
             <div class="options">
-                <button id="rock">✊</button>
-                <button id="paper">✋</button>
-                <button id="scissors">✌</button>
+                <button class="btn" id="rock">✊</button>
+                <button class="btn" id="paper">✋</button>
+                <button class="btn" id="scissors">✌</button>
             </div>
         </div>
     </section>
     <footer class="footer">
-        Copyright E 2045 martinsayshi logo github
+        Copyright &copy; <span id="year"></span> martinsayshi logo github
     </footer>
 </body>
 </html>
