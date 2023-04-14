@@ -8,10 +8,33 @@
     <script src="/js/script.js" defer></script>
 </head>
 <body>
-    <div>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-    </div>
+    <header>
+        <h1 class="title">Rock Paper Scissors</h1>
+    </header>
+    <section class="game">
+        <div>
+            <h2 class="result">Choose your weapon ✊</h2>
+            <p>First to score 5 points wins the game!</p>
+            <div class="board">
+                <div class="game-player">
+                    <div class="weapon" id="playerWeapon">❔</div>
+                    <p class="score player"><strong>Player: </strong>0</p>
+                </div>
+                <div class="game-player">
+                    <div class="weapon">❔</div>
+                    <p class="score computer" id="computerWeapon"><strong>Computer: </strong>0</p>
+                </div>
+                
+            </div>
+            <div class="options">
+                <button id="rock">✊</button>
+                <button id="paper">✋</button>
+                <button id="scissors">✌</button>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        Copyright E 2045 martinsayshi logo github
+    </footer>
 </body>
 </html>

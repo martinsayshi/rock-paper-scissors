@@ -1,4 +1,15 @@
 const moves = ["Rock", "Paper", "Scissors"];
+const signs = {
+    "Rock": "✊",
+    "Paper": "✋",
+    "Scissors": "✌"
+}
+
+const playerScore = document.querySelector(".player");
+const computerScore = document.querySelector(".computer");
+const results = document.querySelector(".result");
+const playerWeapon = document.getElementById("playerWeapon");
+const computerWeapon = document.getElementById("computerWeapon");
 
 function getRandomInteger(min, max) {
     // returns a random number with min included and max excluded
@@ -6,7 +17,7 @@ function getRandomInteger(min, max) {
 }
 
 function getComputerChoice() {
-    let randomNumber = getRandomInteger(0, moves.length);
+    let randomNumber = getRandomInteger(0, 3);
     return moves[randomNumber];
 }
 
@@ -29,22 +40,44 @@ function playRound(playerSelection, computerSelection) {
     return message;
 }
 
+function checkWinner(score) {
+    if (score.player === 5) {
+        results.textContent = "You won the game!";
+        resetGame();
+    } else if (score.computer === 5) {
+        results.textContent = "You lost the game...";
+        resetGame();
+    }
+}
+
+function resetGame() {
+    playerScore.textContent = `Player: 0`;
+    computerScore.textContent=  `Computer: 0`;
+    // results.textContent = "Choose your weapon";
+}
+
+function updateText(playerChoice, computerChoice, winner) {
+    results.textContent = winner;
+    playerWeapon.textContent = 
+    playerScore.textContent = `Player: ${score.player}`;
+    computerScore.textContent=  `Computer: ${score.computer}`;
+}
+
+function game(playerChoice) {
+    const computerSelection = getComputerChoice();
+    
+    // Play game
+    const winner = playRound(playerChoice, computerSelection);
+    updateText(winner);
+    checkWinner(score);
+}
+
 const score = {
     player: 0,
     computer: 0
 }
 
 let round = 0;
-function game(playerChoice) {
-    const computerSelection = getComputerChoice();
-    
-    // Play game
-    console.log(playRound(playerChoice, computerSelection));
-    console.log(`Player: ${score.player} Computer: ${score.computer}`);
-    round++;
-    console.log(round);
-}
-
 
 const buttons = document.getElementsByTagName('button');
 
