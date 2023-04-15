@@ -83,7 +83,17 @@ header {
 footer {
     margin-top: auto;
     font-family: sans-serif;
-    font-size: 12px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 36px;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+.footer-img {
+    padding: 15px;
+    width: 50px;
 }
